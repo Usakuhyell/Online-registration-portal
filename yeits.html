@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="yeits.css" />
+    <title>YEITS</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="nav-bar">
+        <div class="logo">
+          <a href="yeits.html">
+            <img class="image-logo" src="/images/2.png" alt="YEITS Logo." />
+          </a>
+        </div>
+        <div class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#" class="link active">Home</a></li>
+            <li><a href="#" class="link">Services</a></li>
+            <li><a href="#" class="link">About Us</a></li>
+          </ul>
+        </div>
+        <div class="database-btn">
+          <button class="create-database">Create Database</button>
+        </div>
+      </nav>
+      <!------------------CUSTOMER FORM------------------------>
+      <div class="customer-formbox">
+        <div class="customer-form">
+          <div class="header">
+            <span>Have an account? </span>
+            <header class="up-btn">Sign Up</header>
+          </div>
+          <div class="input-form">
+            <label for="Full Name" class="label">Full Name:</label>
+            <input
+              type="text"
+              class="input-field"
+              id="fullName"
+              placeholder="Full Name"
+            />
+            <span class="errorMessage" id="fullNameError"></span>
+          </div>
+          <div class="input-form">
+            <label for="Phone number" class="label">Phon Number:</label>
+            <input
+              type="tel"
+              class="input-field"
+              id="phone"
+              placeholder="Phone Number"
+            />
+            <span class="errorMessage" id="phoneError"></span>
+          </div>
+          <div class="input-form">
+            <label for="House Address" class="label">House address:</label>
+            <textarea
+              id="houseAddress"
+              rows="4"
+              cols="1"
+              placeholder="Enter your house address."
+              class="addressArea"
+              maxlength="100"
+            ></textarea>
+            <!-- <input
+              type="text"
+              class="input-field"
+              id="houseAddress"
+              placeholder="House Address"
+            /> -->
+            <span class="errorMessage" id="houseError"></span>
+          </div>
+          <div class="input-form">
+            <label for="State of Origin" class="label">State of Origin:</label>
+            <select class="input-field" id="stateOfOrigin">
+              <option value="">--select state--</option>
+            </select>
+            <span class="errorMessage" id="stateOfOriginError"></span>
+          </div>
+          <div class="input-form">
+            <label for="Local Government Area" class="label"
+              >Local Government Area:</label
+            >
+            <select class="input-field" id="LGA" disabled>
+              <option value="">--select LGA--</option>
+            </select>
+            <span class="errorMessage" id="localGovernmentError"></span>
+          </div>
+          <div class="image">
+            <label class="image-label" for="Image">Upload Image:</label>
+            <input
+              type="file"
+              class="image-field"
+              placeholder="Upload Image:"
+            />
+            <span class="errorMessage" id="imageUploadError"></span>
+          </div>
+          <!-----------------Saving Scheme----------------->
+          <div class="scheme">
+            <div class="header">
+              <header class="pick">Pick a Plan or More</header>
+              <p class="notice">
+                <b class="Notice">NOTICE...!!!</b> You are free to pick one or
+                more plans depending on which you want to enroll for.
+              </p>
+            </div>
+            <div class="checkbox">
+              <div class="scheme">
+                <input type="checkbox" id="daily" />
+                <label for="Daily">Daily</label>
+              </div>
+              <div class="scheme">
+                <input type="checkbox" id="weekly" />
+                <label for="Weekly">Weekly</label>
+              </div>
+              <div class="scheme">
+                <input type="checkbox" id="monthly" />
+                <label for="Monthly">Monthly</label>
+              </div>
+            </div>
+            <div class="checkboxError">
+              <span id="checkboxError"></span>
+            </div>
+            <div class="submit-container">
+              <input type="submit" id="databaseBtn" value="Create Database" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="yeits.js"></script>
+  </body>
+</html>
