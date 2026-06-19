@@ -254,3 +254,8 @@ header {
 #databaseBtn:hover {
   background: #0026ff;
 }
+#submitError {
+  font-size: 15px;
+  font-weight: 500;
+  color: red;
+}

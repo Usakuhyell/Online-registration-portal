@@ -19,6 +19,7 @@ const stateOfOriginError = document.getElementById('stateOfOriginError');
 const localGovernmentError = document.getElementById('localGovernmentError');
 const imageUploadError = document.getElementById('imageUploadError');
 const checkboxError = document.getElementById('checkboxError');
+const submitError = document.getElementById('submitError');
 
 // State of origin and local government area dropdown
 const dropDown = () => {
@@ -84,61 +85,76 @@ function formValidation() {
   localGovernmentError.textContent = '';
   imageUploadError.textContent = '';
   checkboxError.textContent = '';
+  submitError.textContent = '';
 
   // full name validation
   if (fullNameValue === '') {
     nameError.textContent = 'Full name is required.';
+    submitError.textContent = nameError.textContent;
     return false;
   } else if (fullName.length > 3) {
     nameError.textContent = 'Full name should not be more than three names.';
+    submitError.textContent = nameError.textContent;
     return false;
   } else if (fullName.length === 1) {
     nameError.textContent = 'please enter your full name.';
+    submitError.textContent = nameError.textContent;
     return false;
   } else if (!onlyLetters.test(fullNameValue)) {
     nameError.textContent =
       'Full name must contain only letter no numbers and special chatacters.';
+    submitError.textContent = nameError.textContent;
     return false;
   }
   // Phone number validation
   else if (phoneNumber === '') {
     phoneError.textContent = 'Phone number is required';
+    submitError.textContent = phoneError.textContent;
     return false;
   } else if (!onlyNumbers.test(phoneNumber)) {
     phoneError.textContent =
       'Phone number must only be digits no alphabets and special characters.';
+    submitError.textContent = phoneError.textContent;
     return false;
   } else if (phoneNumber.length !== 11) {
     phoneError.textContent = 'Phone number must be eleven digits.';
+    submitError.textContent = phoneError.textContent;
     return false;
   }
   // House address validation
   else if (houseAddress === '') {
     houseAddressError.textContent = 'House address is required';
+    submitError.textContent = houseAddressError.textContent;
     return false;
   } else if (houseAddress.length > 100) {
     houseAddressError.textContent = "Please shorten your address it's too long";
+    submitError.textContent = houseAddressError.textContent;
     return false;
   }
   // State of origin validation.
   else if (stateOfOriginInput.value === '') {
-    stateOfOriginError.textContent = 'state of origin required';
+    stateOfOriginError.textContent = 'state of origin is required';
+    submitError.textContent = stateOfOriginError.textContent;
     return false;
   }
   // Local government area validation.
   else if (localGovAreaInput.value === '') {
     localGovernmentError.textContent = 'local government area is required';
+    submitError.textContent = localGovernmentError.textContent;
     return false;
   }
   // photo/passport validaion
   else if (!imageFile) {
     imageUploadError.textContent = 'Image/pasport photo is required';
+    submitError.textContent = imageUploadError.textContent;
     return false;
   } else if (!allowedImageType.includes(imageFile.type)) {
     imageUploadError.textContent = 'The image should only be in jpeg or png';
+    submitError.textContent = imageUploadError.textContent;
     return false;
   } else if (imageFile.size > allowedImageSize) {
     imageUploadError.textContent = 'The photo size should not be more than 5MB';
+    submitError.textContent = imageUploadError.textContent;
     return false;
   }
   // Saving scheme validation.
@@ -147,7 +163,8 @@ function formValidation() {
     weeklyBox.checked !== true &&
     monthlyBox.checked !== true
   ) {
-    checkboxError.textContent = 'pick at least one saving scheme';
+    checkboxError.textContent = 'click at least one checkbox';
+    submitError.textContent = checkboxError.textContent;
     return false;
   }
   return true;
