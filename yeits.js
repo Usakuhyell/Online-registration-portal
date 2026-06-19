@@ -178,6 +178,7 @@ function consolingInputs() {
   const houseAddress = houseAddressInput.value;
   const stateOfOrigin = stateOfOriginInput.value;
   const LGA = localGovAreaInput.value;
+  const currentDate = new Date().toLocaleDateString();
   const imageField = imageFieldInput.files;
   const dailyField = dailyBox.checked;
   const weeklyField = weeklyBox.checked;
@@ -190,6 +191,7 @@ function consolingInputs() {
     'House Address': houseAddress,
     'State of Origin': stateOfOrigin,
     'Local Government Area': LGA,
+    'The Date': currentDate,
     'Passport/Photo': imageField,
     'Daily Checkbox': dailyField,
     'Weekly Checkbox': weeklyField,
@@ -237,3 +239,14 @@ submitbtn.addEventListener('click', function (event) {
     consolingInputs();
   }
 });
+
+// Cursor change logic.
+const cursorChange = (currentField, nextField) => {
+  currentField.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      nextField.focus();
+    }
+  });
+};
+cursorChange(fullNameInput, phoneNumberInput);
+cursorChange(phoneNumberInput, houseAddressInput);
